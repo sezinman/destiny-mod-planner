@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Destiny 2 Vault Cleaner</title>
+    <title>Destiny 2 Mod Planner</title>
     <style>
 
         body {
@@ -19,6 +19,11 @@
             background-color: black;
             font-size: 16px;
             font-family: sans-serif;
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         select, button, input {
@@ -399,7 +404,7 @@
                 return;
             }
             for (var element of slot.closest("tr").querySelectorAll(".mod")) {
-                if (!element.className.includes(child.className) && !element.className.includes("kinetic") && element.id !== child.id) {
+                if (!element.className.includes(child.className) && !element.className.includes("kinetic") && !child.className.includes("kinetic") && element.id !== slot.firstElementChild.id) {
                     return;
                 }
             }
