@@ -401,7 +401,9 @@
                 return;
             }
             if (+child.id.split("-", 2)[1] + (+slot.closest("tr").firstElementChild.getElementsByTagName('span')[0].innerHTML) > 10 + (slot.firstElementChild ? +slot.firstElementChild.id.split("-", 2)[1] : 0)) { // need to check existing element
-                return;
+                if (!(parentRow && parentRow === slot.closest("tr"))) {
+                    return; // NEED TO FIX HERE, CAN'T MOVE FROM ONE SLOT TO ANOTHER, FRANKLY THIS ENTIRE CLAUSE IS A MESS, FIXED FOR NOW BUT FUCK MAN
+                }
             }
             for (var element of slot.closest("tr").querySelectorAll(".mod")) {
                 if (!element.className.includes(child.className) && !element.className.includes("kinetic") && !child.className.includes("kinetic") && element.id !== slot.firstElementChild.id) {
