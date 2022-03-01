@@ -391,6 +391,7 @@
             if (!slot.classList.contains("slot")) { // if not slot then stop
                 if (child.parentElement) {
                     child.parentElement.removeChild(child);
+                    updateRow(parentRow);
                 }
                 return;
             }
