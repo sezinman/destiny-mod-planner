@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Destiny 2 Vault Cleaner</title>
+    <style>
+
+        body {
+            background-color: black;
+            text-align: center;
+            vertical-align: middle;
+            color: white;
+            font-size: 16px;
+            font-family: sans-serif;
+        }
+
+        body * {
+            color: white;
+            background-color: black;
+            font-size: 16px;
+            font-family: sans-serif;
+        }
+
+        select, button, input {
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 8px 15px;
+        }
+
+        select, input {
+            padding: 5px 8px;
+        }
+
+        .slot {
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid white;
+        }
+
+        .mod {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 40px;
+            margin: 10px;
+        }
+
+        .kinetic {
+            background-color: grey;
+        }
+
+        .arc {
+            background-color: lightskyblue;
+        }
+
+        .solar {
+            background-color: orange;
+        }
+
+        .void {
+            background-color: blueviolet;
+        }
+
+        .stasis {
+            background-color: blue;
+        }
+
+        #slot-table td:first-child, #slot-table td:last-child {
+            border-width: 0px;
+            width: 250px;
+        }
+
+    </style>
+</head>
+<body ondrop="drop(event)" ondragover="allowDrop(event)">
+    <div style="display: inline-block;" draggable="false">
+        <table id="slot-table">
+            <tr>
+                <td>
+                    Helmet: <span>0</span>/10
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    N/A, N/A, N/A, N/A, N/A
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Gloves: <span>0</span>/10
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    N/A, N/A, N/A, N/A, N/A
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Chest: <span>0</span>/10
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    N/A, N/A, N/A, N/A, N/A
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Boots: <span>0</span>/10
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    N/A, N/A, N/A, N/A, N/A
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Class Item: <span>0</span>/10
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    N/A, N/A, N/A, N/A, N/A
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br/>
+    <div class="mod kinetic" draggable="true" ondragstart="drag(event)" id="kinetic-1" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        1
+    </div>
+    <div class="mod kinetic" draggable="true" ondragstart="drag(event)" id="kinetic-2" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        2
+    </div>
+    <div class="mod kinetic" draggable="true" ondragstart="drag(event)" id="kinetic-3" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        3
+    </div>
+    <div class="mod kinetic" draggable="true" ondragstart="drag(event)" id="kinetic-4" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        4
+    </div>
+    <div class="mod kinetic" draggable="true" ondragstart="drag(event)" id="kinetic-5" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        5
+    </div>
+    <div class="mod kinetic" draggable="true" ondragstart="drag(event)" id="kinetic-6" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        6
+    </div>
+    <div class="mod kinetic" draggable="true" ondragstart="drag(event)" id="kinetic-7" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        7
+    </div>
+    <div class="mod kinetic" draggable="true" ondragstart="drag(event)" id="kinetic-8" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        8
+    </div>
+    <div class="mod kinetic" draggable="true" ondragstart="drag(event)" id="kinetic-9" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        9
+    </div>
+    <div class="mod kinetic" draggable="true" ondragstart="drag(event)" id="kinetic-10" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        10
+    </div>
+    <br/>
+    <div class="mod arc" draggable="true" ondragstart="drag(event)" id="arc-1" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        1
+    </div>
+    <div class="mod arc" draggable="true" ondragstart="drag(event)" id="arc-2" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        2
+    </div>
+    <div class="mod arc" draggable="true" ondragstart="drag(event)" id="arc-3" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        3
+    </div>
+    <div class="mod arc" draggable="true" ondragstart="drag(event)" id="arc-4" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        4
+    </div>
+    <div class="mod arc" draggable="true" ondragstart="drag(event)" id="arc-5" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        5
+    </div>
+    <div class="mod arc" draggable="true" ondragstart="drag(event)" id="arc-6" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        6
+    </div>
+    <div class="mod arc" draggable="true" ondragstart="drag(event)" id="arc-7" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        7
+    </div>
+    <div class="mod arc" draggable="true" ondragstart="drag(event)" id="arc-8" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        8
+    </div>
+    <div class="mod arc" draggable="true" ondragstart="drag(event)" id="arc-9" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        9
+    </div>
+    <div class="mod arc" draggable="true" ondragstart="drag(event)" id="arc-10" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        10
+    </div>
+    <br/>
+    <div class="mod solar" draggable="true" ondragstart="drag(event)" id="solar-1" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        1
+    </div>
+    <div class="mod solar" draggable="true" ondragstart="drag(event)" id="solar-2" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        2
+    </div>
+    <div class="mod solar" draggable="true" ondragstart="drag(event)" id="solar-3" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        3
+    </div>
+    <div class="mod solar" draggable="true" ondragstart="drag(event)" id="solar-4" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        4
+    </div>
+    <div class="mod solar" draggable="true" ondragstart="drag(event)" id="solar-5" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        5
+    </div>
+    <div class="mod solar" draggable="true" ondragstart="drag(event)" id="solar-6" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        6
+    </div>
+    <div class="mod solar" draggable="true" ondragstart="drag(event)" id="solar-7" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        7
+    </div>
+    <div class="mod solar" draggable="true" ondragstart="drag(event)" id="solar-8" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        8
+    </div>
+    <div class="mod solar" draggable="true" ondragstart="drag(event)" id="solar-9" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        9
+    </div>
+    <div class="mod solar" draggable="true" ondragstart="drag(event)" id="solar-10" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        10
+    </div>
+    <br/>
+    <div class="mod void" draggable="true" ondragstart="drag(event)" id="void-1" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        1
+    </div>
+    <div class="mod void" draggable="true" ondragstart="drag(event)" id="void-2" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        2
+    </div>
+    <div class="mod void" draggable="true" ondragstart="drag(event)" id="void-3" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        3
+    </div>
+    <div class="mod void" draggable="true" ondragstart="drag(event)" id="void-4" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        4
+    </div>
+    <div class="mod void" draggable="true" ondragstart="drag(event)" id="void-5" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        5
+    </div>
+    <div class="mod void" draggable="true" ondragstart="drag(event)" id="void-6" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        6
+    </div>
+    <div class="mod void" draggable="true" ondragstart="drag(event)" id="void-7" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        7
+    </div>
+    <div class="mod void" draggable="true" ondragstart="drag(event)" id="void-8" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        8
+    </div>
+    <div class="mod void" draggable="true" ondragstart="drag(event)" id="void-9" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        9
+    </div>
+    <div class="mod void" draggable="true" ondragstart="drag(event)" id="void-10" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        10
+    </div>
+    <br/>
+    <div class="mod stasis" draggable="true" ondragstart="drag(event)" id="stasis-1" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        1
+    </div>
+    <div class="mod stasis" draggable="true" ondragstart="drag(event)" id="stasis-2" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        2
+    </div>
+    <div class="mod stasis" draggable="true" ondragstart="drag(event)" id="stasis-3" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        3
+    </div>
+    <div class="mod stasis" draggable="true" ondragstart="drag(event)" id="stasis-4" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        4
+    </div>
+    <div class="mod stasis" draggable="true" ondragstart="drag(event)" id="stasis-5" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        5
+    </div>
+    <div class="mod stasis" draggable="true" ondragstart="drag(event)" id="stasis-6" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        6
+    </div>
+    <div class="mod stasis" draggable="true" ondragstart="drag(event)" id="stasis-7" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        7
+    </div>
+    <div class="mod stasis" draggable="true" ondragstart="drag(event)" id="stasis-8" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        8
+    </div>
+    <div class="mod stasis" draggable="true" ondragstart="drag(event)" id="stasis-9" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        9
+    </div>
+    <div class="mod stasis" draggable="true" ondragstart="drag(event)" id="stasis-10" ondblclick="addLabel(event)" onmouseover="displayLabel(event)">
+        10
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        window.onerror = function (errorMsg, url, lineNumber) {
+            alert('Error: ' + errorMsg + ' Script: ' + url + ' Line: ' + lineNumber);
+        }
+
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("id", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            ev.stopPropagation();
+            var data = ev.dataTransfer.getData("id");
+            ev.dataTransfer.clearData();
+            if (!data || data === "") {
+                return;
+            }
+            var slot = ev.target;
+            var child = document.getElementById(data);
+            var parentRow = child.closest("tr");
+            if (slot.classList.contains("mod")) { // error checking if you drop into mod instead of slot
+                slot = slot.parentElement;
+            }
+            if (!child.parentElement.classList.contains("slot")) { // clone if new
+                child = child.cloneNode(true);
+                child.id += "-" + new Date().getTime();
+                child.style.margin = "0px";
+            }
+            if (!slot.classList.contains("slot")) { // if not slot then stop
+                if (child.parentElement) {
+                    child.parentElement.removeChild(child);
+                }
+                return;
+            }
+            if (+child.id.split("-", 2)[1] + (+slot.closest("tr").firstElementChild.getElementsByTagName('span')[0].innerHTML) > 10 + (slot.firstElementChild ? +slot.firstElementChild.id.split("-", 2)[1] : 0)) { // need to check existing element
+                return;
+            }
+            for (var element of slot.closest("tr").querySelectorAll(".mod")) {
+                if (!element.className.includes(child.className) && !element.className.includes("kinetic") && element.id !== child.id) {
+                    return;
+                }
+            }
+            if (slot.firstElementChild) { // overwrite existing mod
+                slot.removeChild(slot.firstElementChild);
+            }
+            slot.appendChild(child);
+
+            if (parentRow) { // update previous row if it exists
+                updateRow(parentRow);
+            }
+            updateRow(slot.closest("tr"));
+        }
+
+        function deleteDrop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            var child = document.getElementById(data);
+            child.parentElement.removeChild(child);
+        }
+
+        function addLabel(ev) {
+            if (ev.target.closest("tr")) {
+                ev.target.title = prompt("Please enter a label.", ev.target.title);
+                updateRow(ev.target.closest("tr"));
+            }
+        }
+
+        function displayLabel(ev) {
+            
+        }
+
+        function updateRow(row) {
+            var labels = row.lastElementChild;
+            labels.innerHTML = "";
+            row.querySelectorAll(".slot").forEach(element => {
+                if (labels.innerHTML !== "") {
+                    labels.innerHTML += ", "
+                }
+                labels.innerHTML += element.firstElementChild ? element.firstElementChild.title || "N/A" : "N/A";
+            });
+            var energy = row.firstElementChild.getElementsByTagName('span')[0];
+            energy.innerHTML = "0";
+            row.querySelectorAll(".mod").forEach(element => {
+                energy.innerHTML = +energy.innerHTML + (+element.id.split("-", 2)[1]);
+            });
+        }
+
+    </script>
+</body>
+</html>
